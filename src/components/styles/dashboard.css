@@ -1,0 +1,201 @@
+/* Dashboard Styles */
+.dashboard {
+  background-color: #ffffff;
+  color: #333333;
+  padding: 2em;
+  min-height: 200vh;
+  position: relative;
+  overflow: visible;
+  z-index: 1; /* Add z-index to establish stacking context */
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 2em;
+  position: relative;
+  z-index: 3; /* Increased z-index */
+}
+
+.dashboard-header h1 {
+  font-size: 2.5em;
+  color: #3399cc;
+  margin-bottom: 0.5em;
+}
+
+.dashboard-header p {
+  font-size: 1.2em;
+  color: #333333;
+}
+
+.dashboard-info {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2em;
+  position: relative;
+  z-index: 3; /* Increased z-index */
+}
+
+/* Info Card with Stars */
+.info-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1.5em;
+  width: 300px;
+  box-shadow: 0 0 1em rgba(0, 123, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 123, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  z-index: 3; /* Added z-index */
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-card h2 {
+  color: #3399cc;
+  margin-bottom: 1em;
+}
+
+.info-card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.info-card li {
+  margin-bottom: 0.5em;
+}
+
+.cta-button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1em;
+  position: relative;
+  z-index: 3; /* Added z-index */
+}
+
+.cta-button:hover {
+  background-color: #ffffff;
+  color: #007bff;
+  box-shadow: 0 0 0.7em 0.15em rgba(0, 123, 255, 0.5);
+}
+
+.card-section {
+  display: flex;
+  flex-direction: column;
+  gap: 5em;
+  margin-top: 5em;
+  position: relative;
+  z-index: 3; /* Increased z-index */
+}
+
+.card-container,
+.card-container-2,
+.card-container-3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  margin-bottom: 5em;
+  position: relative;
+  z-index: 3; /* Added z-index */
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 2em;
+  position: relative;
+  z-index: 3; /* Added z-index */
+}
+
+.card-header h1 {
+  font-size: 2.5em;
+  color: #3399cc;
+  margin-bottom: 0.2em;
+  margin-top: 1em;
+}
+
+.star {
+  position: absolute; /* Changed from absolute to fixed */
+  width: 40px;
+  height: 40px;
+  z-index: 2; /* Increased z-index but still below content */
+  pointer-events: none;
+  opacity: 1; /* Ensure stars are visible */
+}
+
+.star svg {
+  width: 100%;
+  height: 100%;
+  fill: #ffd700;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8));
+}
+
+.star-1 {
+  left: 20%;
+  animation: falling 15s linear infinite;
+  animation-delay: 0s;
+  height: 300px;
+  width: 300px;
+}
+.star-2 {
+  left: 60%;
+  animation: falling 12s linear infinite;
+  animation-delay: -2s;
+  height: 200px;
+  width: 200px;
+}
+.star-3 {
+  left: 25%;
+  animation: falling 18s linear infinite;
+  animation-delay: -3s;
+}
+.star-4 {
+  left: 75%;
+  animation: falling 14s linear infinite;
+  animation-delay: -7s;
+  height: 200px;
+  width: 200px;
+}
+.star-5 {
+  left: 30%;
+  animation: falling 16s linear infinite;
+  animation-delay: -5s;
+  height: 200px;
+  width: 200px;
+}
+.star-6 {
+  left: 50%;
+  animation: falling 13s linear infinite;
+  animation-delay: -11s;
+}
+
+@keyframes falling {
+  0% {
+    top: -5%;
+    opacity: 1;
+    transform: scale(0.8) rotate(0deg);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1) rotate(180deg);
+  }
+  100% {
+    top: 105%;
+    opacity: 0.3;
+    transform: scale(0.8) rotate(360deg);
+  }
+}
+
+.dashboard:hover .star {
+  filter: drop-shadow(0 0 15px #ffd700);
+}

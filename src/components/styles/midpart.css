@@ -1,0 +1,70 @@
+/* Midpart Styles */
+.proof-section {
+  background-color: #ffffff;
+  color: #333333;
+  padding: 2em;
+}
+
+.proof-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.proof-title {
+  text-align: center;
+  font-size: 2.5em;
+  color: #3399cc;
+  text-shadow: 0 0 0.3em #3399cc;
+  margin-bottom: 1em;
+}
+
+.proof-items {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.proof-item {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1.5em;
+  width: 250px;
+  border: 1px solid rgba(0, 123, 255, 0.1);
+  box-shadow: 0 0 1em rgba(0, 123, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.proof-item::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(0, 123, 255, 0.1) 0%,
+    rgba(0, 123, 255, 0.05) 50%,
+    transparent 100%
+  );
+  transform: rotate(30deg);
+  pointer-events: none;
+}
+
+.proof-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 1.5em rgba(0, 123, 255, 0.5);
+}
+
+.proof-icon {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  display: flex;
+  align-items: center;
+  color: #3399cc;
+
+  text-decoration: none;
+}
